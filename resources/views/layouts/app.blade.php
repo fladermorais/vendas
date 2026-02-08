@@ -16,6 +16,8 @@
     <!-- Scripts -->
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <script src="https://kit.fontawesome.com/52225251a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
@@ -74,6 +76,11 @@
         </nav>
 
         <main class="py-4">
+            @if (session('message'))
+                <div class="alert alert-{{ session('message')['status'] }}">
+                    {{ session('message')['message'] }} 
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>
