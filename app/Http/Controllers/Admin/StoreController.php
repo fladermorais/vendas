@@ -6,7 +6,6 @@ use App\DTO\CreateStoreDTO;
 use App\DTO\UpdateStoreDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRequest;
-use App\Models\Store;
 use App\Services\StoreService;
 use Illuminate\Http\Request;
 
@@ -23,14 +22,16 @@ class StoreController extends Controller
         return view('admin/stores/index', compact('stores'));
     }
 
-    // public function show(string|int $id)
-    // {
-    //     if(!$store = $this->service->findOne($id)){
-    //         return back();
-    //     }
+    public function show(string|int $id)
+    {
+        $store = $this->service->findOne($id);
 
-    //     return view('');
-    // }
+        if(!$store){
+            return back();
+        }
+
+        return view('admin/stores/show', compact('store'));
+    }
 
     // public function create()
     // {
