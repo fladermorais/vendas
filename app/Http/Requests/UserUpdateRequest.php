@@ -27,4 +27,15 @@ class UserUpdateRequest extends FormRequest
             'password'  =>  "sometimes | nullable | min:8",
         ];
     }
+
+    public function messages()
+    {
+        return [
+            "name.required"     =>  "O Nome é obrigatório",
+            "email.required"    =>  "O e-mail é um campo obrigatório",
+            "email.email"       =>  "É necessário que este campo seja um e-mail válido",
+            "password.min"      =>  "É necessário que a senha tenha ao menos 8 caracteres"
+
+        ];
+    }
 }

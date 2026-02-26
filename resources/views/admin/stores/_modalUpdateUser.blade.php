@@ -10,27 +10,12 @@
                     <input type="hidden" name="id" value="{{ $user['id'] }}">
                     @csrf
                     @method('PUT')
-                    <div class="col-md-12">
-                        <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{ isset($user['name']) ? $user['name'] : old('name')}}">
-                        @if($errors->has('name'))
-                        @foreach($errors->get('name') as $e)
-                        <span class="error">{{$e}}</span>
-                        @endforeach
-                        @endif
-                    </div>
+
+                    @include('admin.stores._formUser')
                     
-                    <div class="col-md-12">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" value="{{ isset($user['email']) ? $user['email'] : "" }}">
-                    </div>
-                    
-                    <div class="col-m12">
-                        <label for="password">Senha</label>
-                        <input type="password" name="password" id="password" class="form-control" value="">
-                    </div>
                     <hr>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary">Atualizar</button>
+                
                 </form>
             </div>
         </div>

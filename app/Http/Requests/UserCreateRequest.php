@@ -24,7 +24,19 @@ class UserCreateRequest extends FormRequest
         return [
             "name"      =>  "required",
             "email"     =>  "required | email",
-            "store_id"  =>  "required"
+            "store_id"  =>  "required",
+            "password"  =>  "required | min:8"
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            "name.required"     =>  "O Nome é obrigatório",
+            "email.required"    =>  "O e-mail é um campo obrigatório",
+            "email.email"       =>  "É necessário que este campo seja um e-mail válido",
+            "store_id.required" =>  "O campo loja é obrigatório",
+            "password.required" =>  "É necessário informar uma senha"
         ];
     }
 }

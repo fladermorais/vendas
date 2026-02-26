@@ -9,20 +9,8 @@
                 <form action="{{ route('user.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="store_id" id="store_id" value="{{ $store->id }}">
-                    <div class="col-md-12">
-                        <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" class="form-control">
-                    </div>
                     
-                    <div class="col-md-12">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control">
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <label for="password">Senha</label>
-                        <input type="text" name="password" id="password" class="form-control">
-                    </div>
+                    @include('admin.stores._formUser', $user = [])
 
                     <hr>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
