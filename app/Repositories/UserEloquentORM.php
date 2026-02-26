@@ -57,7 +57,6 @@ class UserEloquentORM implements UserRepositoryInterface
         if(!$user){
             return null;
         }
-
         $user->update(
             (array) $dto
         );

@@ -2,7 +2,7 @@
 
 namespace App\DTO;
 
-use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserUpdateRequest;
 use Symfony\Component\HttpFoundation\Request;
 
 class UpdateUserDTO 
@@ -11,16 +11,16 @@ class UpdateUserDTO
         public string $id,
         public string $name,
         public string $email,
-        public string $store_id
+        public string $password
     ){}
 
-    public static function makeFromRequest(UserCreateRequest $request): self
+    public static function makeFromRequest(UserUpdateRequest $request): self
     {
         return new self (
             $request->id,
             $request->name,
             $request->email,
-            $request->store_id
+            $request->password,
         );
     }
 }

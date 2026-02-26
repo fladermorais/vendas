@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\StoreController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Loja
 Route::resource('store', StoreController::class);
+
+Route::resource('user', UserController::class);

@@ -10,7 +10,8 @@ class CreateUserDTO
     public function __construct(
         public string $name,
         public string $email,
-        public string $store_id
+        public string $store_id,
+        public string $password
     ){}
 
     public static function makeFromRequest(UserCreateRequest $request): self
@@ -18,7 +19,8 @@ class CreateUserDTO
         return new self (
             $request->name,
             $request->email,
-            $request->store_id
+            $request->store_id,
+            $request->password
         );
     }
 }
