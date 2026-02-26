@@ -32,7 +32,7 @@ class StoreEloquentORM implements StoreRepositoryInterface
     public function findOne(string $id): stdClass|null
     {
         $store = $this->model
-                      ->find($id);
+                      ->with('users')->find($id);
         
         if(!$store) {
             return null;
