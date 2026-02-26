@@ -1,0 +1,7 @@
+/* Classe de erro para as validações */
+.error {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 10px;
+    color: red;
+}
