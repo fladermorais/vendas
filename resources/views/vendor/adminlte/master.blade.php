@@ -96,6 +96,10 @@
         <meta name="msapplication-TileImage" content="{{ asset('favicons/ms-icon-144x144.png') }}">
     @endif
 
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    <script src="https://kit.fontawesome.com/52225251a0.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
